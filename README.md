@@ -15,8 +15,7 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Unit testing and End-to-end (E2E) testings are available.
-Unit testing are available through [Karma](https://docs.angularjs.org/guide/unit-testing) with [jasmine](https://jasmine.github.io/).
-E2E testing is through [protractor](http://www.protractortest.org), running on selenium server, complemented with [jasmine](https://jasmine.github.io/)
+Unit testing are available through [Karma](https://docs.angularjs.org/guide/unit-testing) 
 
 ## Troubleshooting
 
