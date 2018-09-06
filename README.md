@@ -7,10 +7,10 @@ version 0.16.1.
 ## Installation 
 - Clone the repo via http
 - remove the folder node_modules
-- run 'npm install' (with 'sudo' if you dont have permissions).
-- run 'bower install' or 'bower update'
-- run 'grunt build'
-- run 'grunt serve'
+- run `'npm install'` (with `'sudo'` if you dont have permissions).
+- run `'bower install'` or 'bower update'
+- run `'grunt build'`
+- run `'grunt serve'`
 
 
 ## Build & development
