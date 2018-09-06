@@ -162,7 +162,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           'dist/scripts/scripts.js': [
-            'dist/scripts/scripts.js'
+            '<%= yeoman.app %>/js/{,*/}*.js'
           ]
         }
       }
@@ -188,7 +188,7 @@ module.exports = function (grunt) {
     targethtml: {
       dist: {
         files: {
-          'dist/index.html': 'src/public/index.html'
+          'dist/index.html': '<%= yeoman.app %>/index.html'
         }
       }
     },

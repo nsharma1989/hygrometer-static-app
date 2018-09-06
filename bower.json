@@ -2,6 +2,10 @@
   "name": "hygrometer",
   "dependencies": {
     "bootstrap": "4.0",
-    "angular": "1.6.1"
-  }
+    "angular": "1.6.1",
+    "amcharts-angular": "^1.1.0",
+    "components-font-awesome": "^5.0.6"
+  },
+  "appPath": "app",
+  "moduleName": "hygrometerApp"
 }
