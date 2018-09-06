@@ -78,17 +78,13 @@ module.exports = function (grunt) {
 
     sass: {
       development: {
-          options: {
-            paths: ['<%= yeoman.app %>/scss/style.scss'],
-          },
+         
           files: {
             '<%= yeoman.app %>/css/style.css': '<%= yeoman.app %>/scss/style.scss',
           }
       },
       production: {
-          options: {
-            paths: ['<%= yeoman.app %>/scss/style.scss'],
-          },
+          
           files: {
             '<%= yeoman.app %>/css/style.css': '<%= yeoman.app %>/scss/style.scss',
           }
@@ -299,7 +295,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
           'clean:serve',
-          'sass:dist',
+          'sass:development',
           'connect:livereload',
           'watch'
         ]);
