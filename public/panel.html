@@ -1,6 +1,34 @@
 
 <div class="card card-body">
   <div class="card-header">Measurement</div>
-  <div class="card-text">We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.</div>
-  <nav class="navbar"><a class="btn btn-outline-primary btn-flex-width">Real Time</a><a class="btn btn-outline-warning btn-flex-width">Snapshot</a><a href="#" class="btn btn-outline-danger btn-flex-width">Historical</a></nav>
+  <nav class="navbar"><a class="btn btn-outline-primary text-primary">Real Time</a><a class="btn btn-outline-warning text-warning">Snapshot</a><a href="#" class="btn btn-danger">Historical</a></nav>
+  <form class="form-inline">
+    <div class="form-dropdown">
+      <label>Sensor Type</label>
+      <select class="form-control">
+        <option>Humidity</option>
+      </select>
+    </div>
+    <div class="form-dropdown">
+      <label>Sensors</label>
+      <select class="form-control">
+        <option>Humidity</option>
+      </select>
+    </div>
+    <div class="form-dropdown">
+      <label>Data Granularity</label>
+      <select class="form-control">
+        <option>5 Min</option>
+      </select>
+    </div>
+    <div class="form-dropdown">
+      <label>Time Range</label>
+      <select class="form-control">
+        <option>1 Day</option>
+      </select>
+    </div>
+  </form>
+  <div ng-controller="appController" class="card card-body chart-css">
+    <am-chart chart-id="chartdiv"></am-chart>
+  </div><a ng-click="exportCsv()" class="btn btn-primary btn-sm"><i class="fas fa-download">Download</i></a>
 </div>

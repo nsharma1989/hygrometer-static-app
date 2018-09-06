@@ -1,6 +1,27 @@
 nav.navbar
- a.btn.btn-outline-primary.btn-flex-width Real Time
+ a.btn.btn-outline-primary.text-primary Real Time
 
- a.btn.btn-outline-warning.btn-flex-width Snapshot
+ a.btn.btn-outline-warning.text-warning Snapshot
 
- a.btn.btn-outline-danger.btn-flex-width( href="#" ) Historical
+ a.btn.btn-danger( href="#" ) Historical
+
+form.form-inline
+ .form-dropdown
+   label Sensor Type
+   select.form-control
+    option Humidity
+
+ .form-dropdown
+   label Sensors
+   select.form-control
+    option Humidity
+
+ .form-dropdown
+   label Data Granularity
+   select.form-control
+    option 5 Min
+
+ .form-dropdown
+   label Time Range
+   select.form-control
+    option 1 Day
