@@ -7,6 +7,7 @@ version 0.16.1.
 ## Installation 
 - Clone the repo via http
 - remove the folder node_modules
+- create dist, .tmp folder
 - run `'npm install'` (with `'sudo'` if you dont have permissions).
 - run `'bower install'` or 'bower update'
 - run `'grunt build'`
@@ -37,4 +38,9 @@ Unit testing and End-to-end (E2E) testings are available.
 Unit testing are available through [Karma](https://docs.angularjs.org/guide/unit-testing) 
 
 ## Troubleshooting
+
+-make sure your node is latest version
+- grunt is installed 
+- grunt dependencies are installed
+- sudo gem install sass ( for ruby and saas)
 

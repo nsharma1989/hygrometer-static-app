@@ -1,5 +1,9 @@
 .card.card-body.chart-css(ng-controller='appController')
   am-chart(chart-id='chartdiv')
 
-a.btn.btn-primary.btn-sm(ng-click="exportCsv()")
-  i.fas.fa-download Download
+
+div.pull-right-download
+ select.form-control
+  option CSV
+ button.btn.btn-primary.btn-sm(ng-click="exportCsv()")
+  i.fa.fa-download &nbsp;Download

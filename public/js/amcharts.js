@@ -214,44 +214,30 @@ myapp.directive('amChart',
 			        "axisThickness": 2,
 			        "axisAlpha": 1,
 			        "position": "left"
-			    }, {
-			        "id":"v2",
-			        "axisColor": "#FCD202",
-			        "axisThickness": 2,
-			        "axisAlpha": 1,
-			        "position": "right"
-			    }, {
-			        "id":"v3",
-			        "axisColor": "#B0DE09",
-			        "axisThickness": 2,
-			        "gridAlpha": 0,
-			        "offset": 50,
-			        "axisAlpha": 1,
-			        "position": "left"
 			    }],
 	            "graphs": [{
 			        "valueAxis": "v1",
-			        "lineColor": "#FF6600",
+			        "lineColor": "#1E90FF",
 			        "bullet": "round",
-			        "bulletBorderThickness": 1,
+			        "bulletBorderThickness": 3,
 			        "hideBulletsCount": 30,
 			        "title": "red line",
 			        "valueField": "visits",
 					"fillAlphas": 0
 			    }, {
 			        "valueAxis": "v2",
-			        "lineColor": "#FCD202",
+			        "lineColor": "#ea4c88",
 			        "bullet": "square",
-			        "bulletBorderThickness": 1,
+			        "bulletBorderThickness": 3,
 			        "hideBulletsCount": 30,
 			        "title": "yellow line",
 			        "valueField": "hits",
 					"fillAlphas": 0
 			    }, {
 			        "valueAxis": "v3",
-			        "lineColor": "#B0DE09",
+			        "lineColor": "#63cbd3",
 			        "bullet": "triangleUp",
-			        "bulletBorderThickness": 1,
+			        "bulletBorderThickness": 3,
 			        "hideBulletsCount": 30,
 			        "title": "green line",
 			        "valueField": "views",
@@ -262,7 +248,7 @@ myapp.directive('amChart',
         			"cursorPosition": "mouse"
     			},
 	            "dataDateFormat": "dd-mm-yyyy",
-	            "categoryField": "date",
+	            "categoryField": "min",
 			    "categoryAxis": {
 			        "parseDates": true,
 			        "axisColor": "#DADADA",
@@ -281,7 +267,7 @@ myapp.directive('amChart',
 		function generateChartData() {
 		    var chartData = [];
 		    var firstDate = new Date();
-		    firstDate.setDate(firstDate.getDate() - 100);
+		    firstDate.setMinutes(firstDate.getMinutes() - 30);
 
 		        var visits = 1600;
 		        var hits = 2900;
@@ -300,7 +286,7 @@ myapp.directive('amChart',
 		        views += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
 
 		        chartData.push({
-		            date: newDate,
+		            min: newDate,
 		            visits: visits,
 		            hits: hits,
 		            views: views
