@@ -302,31 +302,14 @@ module.exports = function (grunt) {
 
     // Automatically inject Bower components into the app
     wiredep: {
-        app: {
-            src: ['<%= yeoman.app %>/index.html'],
-            ignorePath:  /\.\.\//
-        },
-        dist: {
-            src: ['<%= yeoman.tmp %>/index.html'],
-            ignorePath:  /\.\.\//
-        },
-        test: {
-            devDependencies: true,
-            src: '<%= karma.unit.configFile %>',
-            ignorePath:  /\.\.\//,
-            fileTypes: {
-                js: {
-                    block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
-                    detect: {
-                        js: /'(.*\.js)'/gi
-                    },
-                    replace: {
-                        js: '\'{{filePath}}\','
-                    }
-                }
-            }
-        }
+
+    task: {    
+
+      src: [
+        '<%= yeoman.dist %>/styles/main.css',  // .scss & .sass support...
+      ]
     }
+  }
 
   });
 
@@ -389,7 +372,7 @@ module.exports = function (grunt) {
           'htmlmin',
           'clean:distComplete',
           'bower_concat:all',
-          'wiredep:dist'
+          'wiredep'
         ]);
     });
 
