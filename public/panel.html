@@ -12,7 +12,7 @@
     <div class="form-dropdown">
       <label>Sensors</label>
       <select class="form-control">
-        <option>Humidity</option>
+        <option>CH01 SE01, CH01, SE14, CH03 SE01</option>
       </select>
     </div>
     <div class="form-dropdown">
@@ -30,5 +30,14 @@
   </form>
   <div ng-controller="appController" class="card card-body chart-css">
     <am-chart chart-id="chartdiv"></am-chart>
-  </div><a ng-click="exportCsv()" class="btn btn-primary btn-sm"><i class="fas fa-download">Download</i></a>
+  </div>
+  <div class="row">
+    <div class="col-md-8"></div>
+    <div class="col-md-4">
+      <select class="form-control">
+        <option>CSV</option>
+      </select>
+      <button ng-click="exportCsv()" class="btn btn-primary btn-sm"><i class="fas fa-download">&nbsp;Download</i></button>
+    </div>
+  </div>
 </div>

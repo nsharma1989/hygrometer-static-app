@@ -1,11 +1,12 @@
 body{
 	min-width:320px;
 	background-color: $page-bg;
-	
     font-size: $body-font-size;
+    margin: 10px;
 
-	section{
+	section {
 		padding: 20px;
+		
 		@media(max-width: $pad){
 			padding:10px;
 		}
@@ -19,6 +20,11 @@ body{
 		top: 0;
 		width: 100%;
 		z-index: 999;
+		margin: 10px;
+
+		@media(max-width: $pad){
+			text-align:center;
+		}
 	}
 
 	.footer{

@@ -152,7 +152,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           'dist/styles/main.css': [
-            '.tmp/styles/{,*/}*.css'
+            '<%= yeoman.app %>/scss/style.scss'
           ]
         }
       }
@@ -248,6 +248,11 @@ module.exports = function (grunt) {
                 cwd: 'bower_components/bootstrap/dist',
                 src: 'fonts/*',
                 dest: '<%= yeoman.dist %>'
+            },{
+                expand: true,
+                cwd: 'bower_components/amcharts/dist',
+                src: 'amcharts/images/*',
+                dest: '<%= yeoman.dist %>'
             }]
         },
         styles: {
@@ -274,6 +279,54 @@ module.exports = function (grunt) {
                 }]
             }
         },
+      bower_concat: {
+        all: {
+          dest: {
+            'js': 'dist/bower.js',
+            'css': 'dist/bower.css',
+          },
+          exclude: [
+            'jquery',
+            'modernizr'
+          ],
+          dependencies: {
+            'underscore': 'jquery',
+            'backbone': 'underscore',
+            'jquery-mousewheel': 'jquery'
+          },
+          bowerOptions: {
+            relative: false
+          }
+        }
+    },
+
+    // Automatically inject Bower components into the app
+    wiredep: {
+        app: {
+            src: ['<%= yeoman.app %>/index.html'],
+            ignorePath:  /\.\.\//
+        },
+        dist: {
+            src: ['<%= yeoman.tmp %>/index.html'],
+            ignorePath:  /\.\.\//
+        },
+        test: {
+            devDependencies: true,
+            src: '<%= karma.unit.configFile %>',
+            ignorePath:  /\.\.\//,
+            fileTypes: {
+                js: {
+                    block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
+                    detect: {
+                        js: /'(.*\.js)'/gi
+                    },
+                    replace: {
+                        js: '\'{{filePath}}\','
+                    }
+                }
+            }
+        }
+    }
 
   });
 
@@ -327,6 +380,7 @@ module.exports = function (grunt) {
         grunt.task.run([
           'clean:dist',
           'copy:preDist',
+          'copy:dist',
           'jade:compile',
           'sass:production',
           'cssmin',
@@ -334,6 +388,8 @@ module.exports = function (grunt) {
           'targethtml:' + build,
           'htmlmin',
           'clean:distComplete',
+          'bower_concat:all',
+          'wiredep:dist'
         ]);
     });
 

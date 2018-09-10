@@ -16,11 +16,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="bower_components/components-font-awesome/css/fontawesome.css">
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/fontawesome-all.css">
   </head>
   <body ng-app="hygrometerApp">
     <div class="header-wrapper">
-      <h2>DATA</h2>
+      <div class="row">
+        <div class="col-md-9 offset-md-1">
+          <h2>Data</h2>
+        </div>
+        <div class="col-md-2">
+          <button ng-click="Logout()" class="btn btn-outline-primary btn-sm"><i class="fas fa-sign-out-alt text-primary">&nbsp;Log Out</i></button>
+        </div>
+      </div>
     </div>
     <section>
       <div class="card card-body">
@@ -36,7 +43,7 @@
           <div class="form-dropdown">
             <label>Sensors</label>
             <select class="form-control">
-              <option>Humidity</option>
+              <option>CH01 SE01, CH01, SE14, CH03 SE01</option>
             </select>
           </div>
           <div class="form-dropdown">
@@ -54,7 +61,16 @@
         </form>
         <div ng-controller="appController" class="card card-body chart-css">
           <am-chart chart-id="chartdiv"></am-chart>
-        </div><a ng-click="exportCsv()" class="btn btn-primary btn-sm"><i class="fas fa-download">Download</i></a>
+        </div>
+        <div class="row">
+          <div class="col-md-8"></div>
+          <div class="col-md-4">
+            <select class="form-control">
+              <option>CSV</option>
+            </select>
+            <button ng-click="exportCsv()" class="btn btn-primary btn-sm"><i class="fas fa-download">&nbsp;Download</i></button>
+          </div>
+        </div>
       </div>
     </section>
   </body>
